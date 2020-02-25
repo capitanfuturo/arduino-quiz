@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""A simple script to generate quiz for arduino.
+"""
+    MIT License - Copyright (c) 2020 Giuseppe Caliendo
+    arduino-quiz
 """
 
 import json
 import os
 import requests
 import serial
+import time
 
 __author__ = "Giuseppe Caliendo"
 __copyright__ = "Copyright 2020, Giuseppe Caliendo"
@@ -22,7 +25,8 @@ def main():
         print("BEGIN")
         
         print("Connecting to Arduino...")
-        serialCom = serial.Serial('COM3', 9600)
+        serialCom = serial.Serial("/dev/ttyACM0", 9600)
+        time.sleep(2)
         print("Connected.")
 
 
@@ -39,9 +43,17 @@ def main():
             counter = 1
             correct = 0
             for question in questionList:
-                question_display = question["question"]
+                
                 correct_answer = question["correct_answer"].upper() 
-                print(question_display)
+                print("A: " + correct_answer)
+                serialCom.write(correct_answer.encode())
+                time.sleep(2)
+                
+                question_display = question["question"]
+                print("Q: " + question_display)
+                serialCom.write(question_display.encode())
+                time.sleep(5)
+
                 answer = input().upper()
                 if answer == correct_answer:
                     print("WOW!")
