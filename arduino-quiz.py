@@ -40,27 +40,16 @@ def main():
             questionList = questions["results"]
 
             print("Generating data for Arduino...")
-            counter = 1
-            correct = 0
-            for question in questionList:
-                
-                correct_answer = question["correct_answer"].upper() 
-                print("A: " + correct_answer)
-                serialCom.write(correct_answer.encode())
-                time.sleep(2)
-                
-                question_display = question["question"]
-                print("Q: " + question_display)
-                serialCom.write(question_display.encode())
-                time.sleep(5)
+            question = questionList[0]
 
-                answer = input().upper()
-                if answer == correct_answer:
-                    print("WOW!")
-                    correct = correct + 1
-                else:
-                    print("Nooo! The correct answer was " + correct_answer)
-                counter = counter + 1
+            correct_answer = question["correct_answer"].upper() 
+            print("A: " + correct_answer)
+            serialCom.write(correct_answer.encode())
+            time.sleep(2)
+                
+            question_display = question["question"]
+            print("Q: " + question_display)
+            serialCom.write(question_display.encode())    
         else:
             print("Error retrieving questions set from opentdb API")
         
@@ -68,7 +57,7 @@ def main():
 
     finally:
         print("Quitting script")
-        quitSignal = "-1" + '\n'
+        quitSignal = "?"
         serialCom.write(quitSignal.encode())
 
 if __name__ == '__main__':
