@@ -40,6 +40,10 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 
 If you want to contact me you can reach me at giuseppe.caliendo [at] gmail.
 
+## Credits
+
+A special thanks to [Open Trivia DB](https://opentdb.com/) and [rahuldottech](https://gist.github.com/rahuldottech/839cb13140f24debae8f72343115de4b) for the waiting button function.
+
 ## License
 
 This project uses the following license: MIT Licence.
