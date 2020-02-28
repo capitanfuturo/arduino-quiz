@@ -4,7 +4,7 @@ arduino-quiz is a simple game made with a python script and an arduino that allo
 
 This is a simple example, feel free to modify and use it as you want.
 
-![video](https://www.youtube.com/watch?v=ueqo8mhZ1yI)
+[![arduino-quiz](http://img.youtube.com/vi/ueqo8mhZ1yI/0.jpg)](http://www.youtube.com/watch?v=ueqo8mhZ1yI)
 
 ## Prerequisites
 
