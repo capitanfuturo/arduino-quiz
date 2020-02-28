@@ -2,7 +2,9 @@
 
 arduino-quiz is a simple game made with a python script and an arduino that allows `makers` to `learn` how to make communication between a PC and an Arduino board.
 
-This is a simple example and feel free to modify and use it as you want.
+This is a simple example, feel free to modify and use it as you want.
+
+![video](https://www.youtube.com/watch?v=ueqo8mhZ1yI)
 
 ## Prerequisites
 
